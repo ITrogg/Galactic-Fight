@@ -1,11 +1,8 @@
+import Home from "./pages/Home/Home";
 import "./App.css";
 
 function App() {
-  return (
-    <main>
-      <h1>Notre super projet </h1>
-    </main>
-  );
+  return Home;
 }
 
 export default App;
