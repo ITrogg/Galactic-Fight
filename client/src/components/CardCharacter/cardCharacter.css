@@ -1,0 +1,26 @@
+.card-main-character {
+  position: relative;
+  width: 20rem;
+  img {
+    width: 20rem;
+  }
+  p {
+    color: white;
+    font-size: 1.2rem;
+  }
+  .atk {
+    position: absolute;
+    bottom: 22%;
+    left: 16%;
+  }
+  .def {
+    position: absolute;
+    bottom: 22%;
+    left: 40%;
+  }
+  .pv {
+    position: absolute;
+    bottom: 22%;
+    left: 63%;
+  }
+}

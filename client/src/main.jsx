@@ -6,7 +6,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HackatonProvider } from "./contexts/hackathonContext";
 
 import App from "./App";
+
 import Planets from "./pages/Planets/Planets";
+import SelectFight from "./pages/selectFight/SelectFight";
 
 const router = createBrowserRouter([
   {
@@ -22,8 +24,15 @@ const router = createBrowserRouter([
         .then((res) => res.data),
   },
   {
-    path: "/tata",
-    element: <App />,
+    path: "/planetes/:id",
+    element: <SelectFight />,
+    loader: async ({ params }) => {
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/planetes/${params.id}`
+      );
+
+      return response.data;
+    },
   },
 ]);
 
