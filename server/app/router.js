@@ -1,5 +1,7 @@
 const express = require("express");
 
+const client = require("../database/client");
+
 const router = express.Router();
 
 /* ************************************************************************* */
@@ -10,7 +12,11 @@ const client = require("../database/client");
 const itemActions = require("./controllers/itemActions");
 
 // Route to get a list of items
-router.get("/items", itemActions.browse);
+router.get("/planetes", (req, res) => {
+  client.query("SELECT * FROM planets").then(([planets]) => {
+    res.status(200).json(planets);
+  });
+});
 
 // Route to get  specifics item by ID
 router.get("/planetes/:id", (req, res) => {
