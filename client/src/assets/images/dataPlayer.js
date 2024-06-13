@@ -1,6 +1,6 @@
-import avatar1 from "../../assets/images/ahsoka-tano.png";
-import avatar2 from "../../assets/images/bb-8.png";
-import avatar3 from "../../assets/images/dooku.png";
+import avatar1 from "./ahsoka-tano.png";
+import avatar2 from "./bb-8.png";
+import avatar3 from "./dooku.png";
 
 const avatars = [
   { id: 1, src: avatar1, alt: "Ahsoka Tano" },
