@@ -1,17 +1,18 @@
 import "./Home.css";
-import ButtonGlobal from "../../components/buttonGlobal/ButtonGlobal";
+import "../../App.css";
 
 function Home() {
   return (
     <main className="background-page">
-      <h1 className="title-style">Notre super projet </h1>
-      <p className="text-style">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-        ab eaque maxime, voluptate corrupti quibusdam accusamus! Officia culpa
-        sunt eum, dolor facilis mollitia voluptas nobis unde laborum, corporis
-        harum omnis! Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-      </p>
-      <ButtonGlobal />
+      <section className="home-container">
+        <div className="home-crawl-content">
+          <h1 className="home-title-style">Légendes Galactiques</h1>
+          <h2 className="home-title-style">Jeu de Cartes de Duel</h2>
+          <button className="button-style" type="button">
+            START WARS
+          </button>
+        </div>
+      </section>
     </main>
   );
 }

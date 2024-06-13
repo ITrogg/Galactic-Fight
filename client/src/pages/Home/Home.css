@@ -1,0 +1,35 @@
+.home-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  perspective: 1000px;
+}
+
+.home-crawl-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  animation: crawl 8s linear forwards;
+  width: 100%;
+}
+
+.home-title-style {
+  color: var(--color-text);
+  font-family: var(--font-title);
+  font-size: var(--font-size-title-home);
+  transform: skewX(30deg);
+  display: inline-block;
+}
+
+@keyframes crawl {
+  0% {
+    transform: translateY(300%) rotateX(20deg);
+    perspective: 3000px;
+  }
+  100% {
+    transform: translateY(50%) rotateX(20deg);
+    perspective: 500px;
+  }
+}
