@@ -31,11 +31,12 @@ function SelectFight() {
       </div>
       <div className="bad-guys">
         {characters.map((character) => (
-          <CardCharacter
-            key={character.id}
-            classCard="card-main-character"
-            character={character}
-          />
+          <Link key={character.id} to={`/adversaire/${character.id}`}>
+            <CardCharacter
+              classCard="card-bad-character"
+              character={character}
+            />
+          </Link>
         ))}
       </div>
     </main>

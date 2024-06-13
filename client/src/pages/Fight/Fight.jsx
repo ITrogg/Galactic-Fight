@@ -13,8 +13,8 @@ function Fight() {
   console.info(setFighter);
   return (
     <main className="background-page">
-      <CardCharacter classCard="card-main-character" character={fighter} />
-      <CardCharacter classCard="card-main-character" character={player} />
+      <CardCharacter classCard="card-battle-character" character={fighter} />
+      <CardCharacter classCard="card-battle-character" character={player} />
     </main>
   );
 }
