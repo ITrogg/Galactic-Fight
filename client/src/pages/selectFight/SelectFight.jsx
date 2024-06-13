@@ -1,10 +1,12 @@
 import { useLoaderData, Link } from "react-router-dom";
 
+import { useHackaton } from "../../contexts/hackathonContext";
 import CardCharacter from "../../components/CardCharacter/CardCharacter";
 import "./selectFight.css";
 
 function SelectFight() {
   const characters = useLoaderData();
+  const { player } = useHackaton();
   return (
     <main className="background-page planet-detail">
       <nav>
@@ -31,13 +33,15 @@ function SelectFight() {
       </div>
       <div className="bad-guys">
         {characters.map((character) => (
-          <CardCharacter
-            key={character.id}
-            classCard="card-main-character"
-            character={character}
-          />
+          <Link key={character.id} to={`/adversaire/${character.id}`}>
+            <CardCharacter
+              classCard="card-bad-character"
+              character={character}
+            />
+          </Link>
         ))}
       </div>
+      <CardCharacter classCard="card-main-character" character={player} />
     </main>
   );
 }

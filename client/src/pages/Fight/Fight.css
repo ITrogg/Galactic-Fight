@@ -1,0 +1,12 @@
+.fight-page {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+.fight-title {
+  padding-top: 4rem;
+  text-align: center;
+  font-size: 6rem;
+  color: var(--color-button);
+}
