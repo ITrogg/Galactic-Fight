@@ -1,5 +1,6 @@
 .fight-page {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-around;
   align-items: center;
 }
