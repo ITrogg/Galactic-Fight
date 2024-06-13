@@ -9,12 +9,18 @@ import App from "./App";
 
 import Planets from "./pages/Planets/Planets";
 import SelectFight from "./pages/selectFight/SelectFight";
+import PlayerForm from "./pages/PlayerForm/PlayerForm";
 import Fight from "./pages/Fight/Fight";
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/player",
+    element: <PlayerForm />,
   },
   {
     path: "/planetes",

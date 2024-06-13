@@ -84,6 +84,14 @@
 .button-style:hover {
   animation: pulse 2.5s infinite;
 }
+
+.box {
+  background-color: var(--bg-color-page);
+  padding: 1.5rem;
+  outline: white solid 1px;
+  border-radius: 5px;
+}
+
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 var(--color-button);

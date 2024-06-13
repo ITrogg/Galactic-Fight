@@ -16,8 +16,11 @@ function Fight() {
 
   return (
     <main className="background-page">
-      <CardCharacter classCard="card-main-character" character={fighter} />
-      <CardCharacter classCard="card-main-character" character={player} />
+      <h1 className="title-style fight-title">Fight 9</h1>
+      <div className="fight-page">
+        <CardCharacter classCard="card-battle-character" character={fighter} />
+        <CardCharacter classCard="card-battle-character" character={player} />
+      </div>
       <button type="button" onClick={() => lauchAttack()}>
         Attaquer
       </button>
