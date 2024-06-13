@@ -8,9 +8,12 @@ import "./Fight.css";
 function Fight() {
   const [character] = useLoaderData();
   const [fighter, setFighter] = useState(character);
-
-  const { player } = useHackaton();
+  const { player, setPlayerstat } = useHackaton();
   console.info(setFighter);
+  const lauchAttack = () => {
+    setPlayerstat("atk", 5);
+  };
+
   return (
     <main className="background-page">
       <h1 className="title-style fight-title">Fight 9</h1>
@@ -18,6 +21,9 @@ function Fight() {
         <CardCharacter classCard="card-battle-character" character={fighter} />
         <CardCharacter classCard="card-battle-character" character={player} />
       </div>
+      <button type="button" onClick={() => lauchAttack()}>
+        Attaquer
+      </button>
     </main>
   );
 }
