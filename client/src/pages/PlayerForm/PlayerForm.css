@@ -32,4 +32,18 @@
     align-self: flex-end;
     margin: 1rem;
   }
+  .title-player {
+    color: black;
+  }
+  .text-player-page {
+    color: black;
+  }
+  .button-player-avatar {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  .button-player-avatar.selected {
+    border: 2px solid black; /* Contour noir autour de l'image sélectionnée */
+  }
 }

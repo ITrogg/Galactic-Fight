@@ -3,15 +3,16 @@ import { createContext, useContext, useState } from "react";
 const HackatonContext = createContext();
 
 export function HackatonProvider({ children }) {
+  const [name, setName] = useState("");
+  const [selectAvatar, setSelectAvatar] = useState(null);
   const [nbVictory, setNbVictory] = useState([]);
   const playerInit = {
     pv: 100,
-    name: "tot",
+    name: { name },
     nb_victory: [],
     atk: 35,
     def: 60,
-    image:
-      "https://github.com/Miadil/starwars-api/blob/master/api/assets/Luke_Skywalker.png?raw=true",
+    image: { selectAvatar },
   };
   const [player, setPlayer] = useState(playerInit);
   const setPlayerstat = (attribute, value) => {
@@ -22,7 +23,7 @@ export function HackatonProvider({ children }) {
   };
   return (
     <HackatonContext.Provider
-      value={{ player, setPlayerstat, nbVictory, setNbVictory }}
+      value={{ player, setPlayerstat, nbVictory, setNbVictory, setName, setSelectAvatar, name, selectAvatar }}
     >
       {children}
     </HackatonContext.Provider>
