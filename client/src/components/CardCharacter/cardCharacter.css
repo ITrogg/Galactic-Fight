@@ -23,6 +23,12 @@
     bottom: 22%;
     left: 63%;
   }
+  .character-name {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
 }
 .card-battle-character {
   position: relative;
@@ -48,5 +54,97 @@
     position: absolute;
     bottom: 22%;
     left: 63%;
+  }
+  .character-name {
+    font-size: 3rem;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 4%;
+  }
+}
+.card-bad-character:hover {
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: pulse 2.5s infinite;
+}
+.card-main-character {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 30rem;
+  img {
+    width: 30rem;
+  }
+  p {
+    color: white;
+    font-size: 2.5rem;
+  }
+  .atk {
+    position: absolute;
+    bottom: 22%;
+    left: 16%;
+  }
+  .def {
+    position: absolute;
+    bottom: 22%;
+    left: 40%;
+  }
+  .pv {
+    position: absolute;
+    bottom: 22%;
+    left: 63%;
+  }
+  .character-name {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 4%;
+  }
+}
+.card-main-character-planets {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  width: 30rem;
+  img {
+    width: 30rem;
+  }
+  p {
+    color: white;
+    font-size: 2.5rem;
+  }
+  .atk {
+    position: absolute;
+    bottom: 22%;
+    left: 16%;
+  }
+  .def {
+    position: absolute;
+    bottom: 22%;
+    left: 40%;
+  }
+  .pv {
+    position: absolute;
+    bottom: 22%;
+    left: 63%;
+  }
+  .character-name {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 4%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--color-button);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 }

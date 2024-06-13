@@ -1,10 +1,12 @@
 import { useLoaderData, Link } from "react-router-dom";
 
+import { useHackaton } from "../../contexts/hackathonContext";
 import CardCharacter from "../../components/CardCharacter/CardCharacter";
 import "./selectFight.css";
 
 function SelectFight() {
   const characters = useLoaderData();
+  const { player } = useHackaton();
   return (
     <main className="background-page planet-detail">
       <nav>
@@ -39,6 +41,7 @@ function SelectFight() {
           </Link>
         ))}
       </div>
+      <CardCharacter classCard="card-main-character" character={player} />
     </main>
   );
 }
