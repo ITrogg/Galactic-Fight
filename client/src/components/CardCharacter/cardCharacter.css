@@ -1,4 +1,4 @@
-.card-main-character {
+.card-bad-character {
   position: relative;
   width: 20rem;
   img {
@@ -7,6 +7,32 @@
   p {
     color: white;
     font-size: 1.2rem;
+  }
+  .atk {
+    position: absolute;
+    bottom: 22%;
+    left: 16%;
+  }
+  .def {
+    position: absolute;
+    bottom: 22%;
+    left: 40%;
+  }
+  .pv {
+    position: absolute;
+    bottom: 22%;
+    left: 63%;
+  }
+}
+.card-battle-character {
+  position: relative;
+  width: 50rem;
+  img {
+    width: 50rem;
+  }
+  p {
+    color: white;
+    font-size: 2.5rem;
   }
   .atk {
     position: absolute;
