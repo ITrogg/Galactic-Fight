@@ -3,6 +3,7 @@ import { createContext, useContext, useState } from "react";
 const HackatonContext = createContext();
 
 export function HackatonProvider({ children }) {
+  const [nbVictory, setNbVictory] = useState([]);
   const playerInit = {
     pv: 100,
     name: "tot",
@@ -20,7 +21,9 @@ export function HackatonProvider({ children }) {
     }));
   };
   return (
-    <HackatonContext.Provider value={{ player, setPlayerstat }}>
+    <HackatonContext.Provider
+      value={{ player, setPlayerstat, nbVictory, setNbVictory }}
+    >
       {children}
     </HackatonContext.Provider>
   );
