@@ -1,20 +1,23 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 const HackatonContext = createContext();
 
 export function HackatonProvider({ children }) {
+  const [name, setName] = useState("");
+  const [selectAvatar, setSelectAvatar] = useState(null);
 
   const player = {
     pv: 100,
-    name: "tot",
+    name: { name },
     nb_victory: 0,
     atk: 35,
     def: 60,
-    image:
-      "https://github.com/Miadil/starwars-api/blob/master/api/assets/Luke_Skywalker.png?raw=true",
+    image: { selectAvatar },
   };
   return (
-    <HackatonContext.Provider value={{ player }}>
+    <HackatonContext.Provider
+      value={{ player, setName, setSelectAvatar, name, selectAvatar }}
+    >
       {children}
     </HackatonContext.Provider>
   );
