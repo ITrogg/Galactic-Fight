@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HackatonProvider } from "./contexts/hackathonContext";
 
 import App from "./App";
+import SelectFight from "./pages/selectFight/SelectFight";
 
 const router = createBrowserRouter([
   {
@@ -16,8 +17,8 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/tata",
-    element: <App />,
+    path: "/planetes/:id",
+    element: <SelectFight />,
   },
 ]);
 
