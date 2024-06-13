@@ -3,22 +3,34 @@ img {
 }
 
 .planet-1 {
-  translate: 15lvw 70lvh;
+  position: absolute;
+  bottom: 10%;
+  left: 15%;
 }
 .planet-2 {
-  translate: 28lvw 60lvh;
+  position: absolute;
+  bottom: 17%;
+  left: 45%;
 }
 .planet-3 {
-  translate: 45lvw 50lvh;
+  position: absolute;
+  bottom: 33%;
+  right: 10%;
 }
 .planet-4 {
-  translate: 30lvw 15lvh;
+  position: absolute;
+  top: 20%;
+  left: 60%;
 }
 .planet-5 {
-  translate: -10lvw 14lvh;
+  position: absolute;
+  top: 20%;
+  left: 35%;
 }
 .planet-6 {
-  translate: -40vw 3lvh;
+  position: absolute;
+  top: 5%;
+  left: 10%;
 }
 
 .planet-7 {
