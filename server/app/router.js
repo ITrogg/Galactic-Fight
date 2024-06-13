@@ -35,6 +35,19 @@ router.get("/planetes/:id", (req, res) => {
     .catch((error) => console.error(error));
 });
 
+// Route to get specifics fighter by ID
+router.get("/characters/:id", (req, res) => {
+  const fighterId = req.params.id;
+  client
+    .query(
+      "SELECT c.*, p.name AS planet_name, p.image AS planet_image FROM characters AS c INNER JOIN planets AS p ON c.planet_id = p.id WHERE c.id = ?;",
+      [fighterId]
+    )
+    .then((character) => {
+      res.status(200).json(character[0]);
+    });
+});
+
 // Route to add a new item
 router.post("/items", itemActions.add);
 
