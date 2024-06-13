@@ -2,11 +2,12 @@ import { useLoaderData, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useHackaton } from "../../contexts/hackathonContext";
 import Planet from "../../components/planet/Planet";
+import CardCharacter from "../../components/CardCharacter/CardCharacter";
 import "./planets.css";
 
 function Planets() {
   const planets = useLoaderData();
-  const { nbVictory } = useHackaton();
+  const { nbVictory, player } = useHackaton();
   const [filteredPlanets, setFilteredPlanets] = useState([]);
 
   const handlePlanets = () => {
@@ -28,6 +29,10 @@ function Planets() {
           </Link>
         ))}
       </section>
+      <CardCharacter
+        classCard="card-main-character-planets"
+        character={player}
+      />
     </main>
   );
 }

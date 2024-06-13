@@ -7,6 +7,7 @@ function CardCharacter({ classCard, character }) {
       <p className="atk">{character.atk}</p>
       <p className="def">{character.def}</p>
       <p className="pv">{character.pv}</p>
+      <h2 className="title-style character-name">{character.name}</h2>
     </article>
   );
 }
