@@ -3,6 +3,7 @@ import { createContext, useContext } from "react";
 const HackatonContext = createContext();
 
 export function HackatonProvider({ children }) {
+
   const player = {
     pv: 100,
     name: "tot",
