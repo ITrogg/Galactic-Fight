@@ -9,6 +9,7 @@ import App from "./App";
 
 import Planets from "./pages/Planets/Planets";
 import SelectFight from "./pages/selectFight/SelectFight";
+import Fight from "./pages/Fight/Fight";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,16 @@ const router = createBrowserRouter([
       );
 
       return response.data;
+    },
+  },
+  {
+    path: "/adversaire/:id",
+    element: <Fight />,
+    loader: async ({ params }) => {
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/characters/${params.id}`
+      );
+      return res.data;
     },
   },
 ]);
