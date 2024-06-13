@@ -1,3 +1,26 @@
 img {
-  width: 10%;
+  width: 15rem;
+}
+
+.planet-1 {
+  translate: 15lvw 70lvh;
+}
+.planet-2 {
+  translate: 28lvw 60lvh;
+}
+.planet-3 {
+  translate: 45lvw 50lvh;
+}
+.planet-4 {
+  translate: 30lvw 15lvh;
+}
+.planet-5 {
+  translate: -10lvw 14lvh;
+}
+.planet-6 {
+  translate: -40vw 3lvh;
+}
+
+.planet-7 {
+  display: none;
 }
