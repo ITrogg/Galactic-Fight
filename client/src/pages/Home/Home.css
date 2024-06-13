@@ -3,6 +3,8 @@
   height: 100%;
   position: relative;
   perspective: 1000px;
+  display: flex;
+  justify-content: center;
 }
 
 .home-crawl-content {
@@ -12,7 +14,7 @@
   justify-content: center;
   top: 50%;
   animation: crawl 8s linear forwards;
-  width: 100%;
+  width: 90%;
 }
 
 .home-title-style {
