@@ -11,7 +11,7 @@ function Planets() {
 
   const handlePlanets = () => {
     const numPlanetsToShow =
-      nbVictory.length === 0 ? 1 : Math.floor(nbVictory.length / 2);
+      nbVictory.length === 0 ? 1 : Math.floor((nbVictory.length + 2) / 2);
     const newFilteredPlanets = planets.slice(0, numPlanetsToShow);
     setFilteredPlanets(newFilteredPlanets);
   };
