@@ -1,6 +1,6 @@
 import "./cardCharacter.css";
 
-function CardCharacter() {
+function CardCharacter({ classCard }) {
   const mainCharacter = {
     id: 1,
     atk: "35",
@@ -11,7 +11,7 @@ function CardCharacter() {
       "https://github.com/Miadil/starwars-api/blob/master/api/assets/Luke_Skywalker.png?raw=true",
   };
   return (
-    <article className="card-character">
+    <article className={classCard}>
       <img
         src="https://github.com/Miadil/starwars-api/blob/master/api/assets/Luke_Skywalker.png?raw=true"
         alt={mainCharacter.name}
