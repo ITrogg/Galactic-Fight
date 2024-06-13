@@ -2,6 +2,11 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  nav {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+  }
   .selected-planet-detail {
     width: 80rem;
     position: relative;

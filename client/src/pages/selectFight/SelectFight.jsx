@@ -1,4 +1,5 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
+
 import CardCharacter from "../../components/CardCharacter/CardCharacter";
 import "./selectFight.css";
 
@@ -6,6 +7,11 @@ function SelectFight() {
   const characters = useLoaderData();
   return (
     <main className="background-page planet-detail">
+      <nav>
+        <Link className="button-style" to="/planetes">
+          retour
+        </Link>
+      </nav>
       <div className="selected-planet-detail">
         <img
           className="img-planet-detail"
