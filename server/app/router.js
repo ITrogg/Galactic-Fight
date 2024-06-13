@@ -7,7 +7,6 @@ const router = express.Router();
 /* ************************************************************************* */
 // Define Your API Routes Here
 /* ************************************************************************* */
-const client = require("../database/client");
 // Import itemActions module for handling item-related operations
 const itemActions = require("./controllers/itemActions");
 

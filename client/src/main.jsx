@@ -16,11 +16,11 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/planets",
+    path: "/planetes",
     element: <Planets />,
     loader: () =>
       axios
-        .get(`${import.meta.env.VITE_API_URL}/api/planets`)
+        .get(`${import.meta.env.VITE_API_URL}/api/planetes`)
         .then((res) => res.data),
   },
   {
