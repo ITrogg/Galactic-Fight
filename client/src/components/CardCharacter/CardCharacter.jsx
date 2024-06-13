@@ -1,24 +1,12 @@
 import "./cardCharacter.css";
 
-function CardCharacter({ classCard }) {
-  const mainCharacter = {
-    id: 1,
-    atk: "35",
-    def: "60",
-    pv: "100",
-    name: "luke skywalker",
-    image:
-      "https://github.com/Miadil/starwars-api/blob/master/api/assets/Luke_Skywalker.png?raw=true",
-  };
+function CardCharacter({ classCard, character }) {
   return (
     <article className={classCard}>
-      <img
-        src="https://github.com/Miadil/starwars-api/blob/master/api/assets/Luke_Skywalker.png?raw=true"
-        alt={mainCharacter.name}
-      />
-      <p className="atk">{mainCharacter.atk}</p>
-      <p className="def">{mainCharacter.def}</p>
-      <p className="pv">{mainCharacter.pv}</p>
+      <img src={character.image} alt={character.name} title={character.name} />
+      <p className="atk">{character.atk}</p>
+      <p className="def">{character.def}</p>
+      <p className="pv">{character.pv}</p>
     </article>
   );
 }
