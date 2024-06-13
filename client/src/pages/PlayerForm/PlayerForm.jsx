@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useHackaton } from "../../contexts/hackathonContext";
-import avatars from "./dataPlayer";
+import avatars from "../../assets/images/dataPlayer";
 import "./PlayerForm.css";
 
 function PlayerForm() {
-  const { name, setName, setSelectAvatar, selectAvatar } = useHackaton();
+  const { selectAvatar, setPlayerstat, player } = useHackaton();
 
   const [sucessForm, setSucessForm] = useState(false);
 
@@ -28,7 +28,7 @@ function PlayerForm() {
                   key={avatar.id}
                   type="button"
                   className={`button-player-avatar ${selectAvatar === avatar.src ? "selected" : ""}`}
-                  onClick={() => setSelectAvatar(avatar.src)}
+                  onClick={() => setPlayerstat("image", avatar.src)}
                 >
                   <img src={avatar.src} alt={avatar.alt} />
                 </button>
@@ -39,8 +39,8 @@ function PlayerForm() {
               <input
                 type="text"
                 required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={player.name}
+                onChange={(e) => setPlayerstat("name", e.target.value)}
                 className="input-form"
               />
             </label>
@@ -48,7 +48,7 @@ function PlayerForm() {
               type="submit"
               onClick={handleSubmit}
               className="button-style button-form"
-              disabled={name === "" || selectAvatar === ""}
+              disabled={player.name === "" || selectAvatar === ""}
             >
               valider
             </button>
