@@ -1,0 +1,52 @@
+.planet-detail {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  nav {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+  }
+  .selected-planet-detail {
+    width: 80rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+    .box-title-planet {
+      top: auto;
+      right: auto;
+      position: absolute;
+    }
+    .img-planet-detail {
+      width: 35rem;
+    }
+    .type-box {
+      position: absolute;
+      width: 28rem;
+      top: 20%;
+      right: 0;
+      color: rgb(255, 255, 255);
+    }
+    .inhabitant-box {
+      position: absolute;
+      width: 28rem;
+      top: 40%;
+      right: 0;
+      color: rgb(255, 255, 255);
+    }
+    .box-description-planet {
+      position: absolute;
+      top: 60%;
+      right: 0;
+      .description-planet {
+        font-family: var(--font-text);
+        font-size: 1.1rem;
+        color: rgb(255, 255, 255);
+        width: 25rem;
+      }
+    }
+  }
+}
