@@ -1,37 +1,38 @@
-import "./PlayerForm.css";
 import { useState } from "react";
 import ewok from "../../assets/images/ewok.png";
+import "./PlayerForm.css";
+import "../../App.css";
 
 const messages = [
   {
     id: "0",
     long_text:
-      "Bienvenue dans l'univers épique de Légendes Galactiques: L'Épopée des Ewoks !",
+      "bienvenue dans l'univers épique de légendes galactiques: l'épopée des ewoks !",
   },
   {
     id: "1",
     long_text:
-      "Dans une galaxie lointaine, très lointaine, une nouvelle aventure vous attend. Toute la galaxie est au bord de la fin, et seule une poignée de braves peut renverser la vapeur.",
+      "dans une galaxie lointaine, très lointaine, une nouvelle aventure vous attend. toute la galaxie est au bord de la fin, et seule une poignée de braves peut renverser la vapeur.",
   },
   {
     id: "2",
     long_text:
-      "La princesse Leia Organa, figure emblématique de l'Alliance Rebelle, a été capturée par Dark Vador.",
+      "la princesse leia organa, figure emblématique de l'alliance rebelle, a été capturée par dark vador.",
   },
   {
     id: "3",
     long_text:
-      "Votre mission : la sauver et restaurer l'espoir dans la galaxie. Avant de partir au combat, il vous faut choisir votre personnage.",
+      "votre mission : la sauver et restaurer l'espoir dans la galaxie. avant de partir au combat, il vous faut choisir votre personnage.",
   },
   {
     id: "4",
     long_text:
-      "Ces personnages ont une statistique d'attaque, de défense, et de points de vie. Suite à chaque combat, vous gagnerez en compétences.",
+      "ces personnages ont une statistique d'attaque, de défense, et de points de vie. suite à chaque combat, vous gagnerez en compétences.",
   },
   {
     id: "5",
     long_text:
-      "Le destin de la galaxie repose entre vos mains. L'univers de Star Wars vous attend. Serez-vous à la hauteur ?",
+      "le destin de la galaxie repose entre vos mains. l'univers de star wars vous attend. serez-vous à la hauteur ?",
   },
 ];
 
@@ -53,7 +54,7 @@ function PlayerForm({ setName }) {
   return (
     <section className="background-page">
       {currentMessageIndex >= 0 ? (
-        <div className="page-container">
+        <div className="box-center-story">
           <div className="box box-position-story">
             <div className="text-style box-story1">
               {messages[currentMessageIndex].long_text}
@@ -64,18 +65,18 @@ function PlayerForm({ setName }) {
                 className="button-style button-story"
                 type="button"
               >
-                Skip
+                suivant
               </button>
               <img src={ewok} alt="Personnage Ewok" />
             </div>
           </div>
         </div>
       ) : (
-        <div className="page-container">
+        <div className="box-center-story">
           <div className="form-container">
             <form onSubmit={handleSubmit}>
               <label htmlFor="avatar" className="avatar-label">
-                Choisie ton avatar
+                choisie ton avatar
               </label>
               <div className="avatar-selection">
                 <img
@@ -92,7 +93,7 @@ function PlayerForm({ setName }) {
                 />
               </div>
               <label htmlFor="name" className="name-label">
-                Quel est ton nom ?
+                quel est ton nom ?
                 <input
                   type="text"
                   onChange={(e) => setName(e.target.value)}
