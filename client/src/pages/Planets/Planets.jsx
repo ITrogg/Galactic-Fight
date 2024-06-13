@@ -9,11 +9,11 @@ function Planets() {
   return (
     <main className="background-page">
       <section className="map-planets">
-        <Link to="/planetes/:id">
-          {planets.map((planet) => (
-            <Planet key={planet.index} planet={planet} />
-          ))}
-        </Link>
+        {planets.map((planet) => (
+          <Link key={planet.id} to={`/planetes/${planet.id}`}>
+            <Planet planet={planet} />
+          </Link>
+        ))}
       </section>
     </main>
   );
