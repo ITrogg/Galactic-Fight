@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 
 import Planet from "../../components/planet/Planet";
 import "./planets.css";
@@ -9,9 +9,11 @@ function Planets() {
   return (
     <main className="background-page">
       <section className="map-planets">
-        {planets.map((planet) => (
-          <Planet key={planet.index} planet={planet} />
-        ))}
+        <Link to="/planetes/:id">
+          {planets.map((planet) => (
+            <Planet key={planet.index} planet={planet} />
+          ))}
+        </Link>
       </section>
     </main>
   );
