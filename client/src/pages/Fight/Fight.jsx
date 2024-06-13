@@ -8,13 +8,19 @@ import "./Fight.css";
 function Fight() {
   const [character] = useLoaderData();
   const [fighter, setFighter] = useState(character);
-
-  const { player } = useHackaton();
+  const { player, setPlayerstat } = useHackaton();
   console.info(setFighter);
+  const lauchAttack = () => {
+    setPlayerstat("atk", 5);
+  };
+
   return (
     <main className="background-page">
       <CardCharacter classCard="card-main-character" character={fighter} />
       <CardCharacter classCard="card-main-character" character={player} />
+      <button type="button" onClick={() => lauchAttack()}>
+        Attaquer
+      </button>
     </main>
   );
 }
