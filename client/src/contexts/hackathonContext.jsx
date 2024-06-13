@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 const HackatonContext = createContext();
 
 export function HackatonProvider({ children }) {
-  const [nbVictory, setNbVictory] = useState(["", ""]);
+  const [nbVictory, setNbVictory] = useState([]);
   const playerInit = {
     pv: 100,
     name: "tot",

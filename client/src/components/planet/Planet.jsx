@@ -2,7 +2,7 @@ import "./planet.css";
 
 function Planet({ planet }) {
   return (
-    <div className={`planet-${planet.id}`}>
+    <div className={`planet-${planet.id} planets-all`}>
       <img src={planet.image} alt={planet.name} />
       <h2 className="title-style">{planet.name}</h2>
     </div>
