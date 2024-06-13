@@ -1,8 +1,36 @@
 .page-container {
-  height: 80vh; /* 100% de la hauteur de la vue */
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.box-position-story {
+  max-width: 60%;
+  min-width: 60%;
+}
+
+.box-story1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.box-story2 {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: end;
+}
+
+.box-story2 img {
+  width: 10rem;
+  position: absolute;
+  left: 16%;
+  top: 38%;
+}
+
+.button-story {
+  margin: 0;
+  max-height: 3rem;
 }
 
 .form-container {
