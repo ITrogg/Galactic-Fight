@@ -1,7 +1,18 @@
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useHackaton } from "../../contexts/hackathonContext";
+import avatars from "./dataPlayer";
 import "./PlayerForm.css";
 
-function PlayerForm(setName) {
-  const handleSubmit = () => {};
+function PlayerForm() {
+  const { name, setName, setSelectAvatar, selectAvatar } = useHackaton();
+
+  const [sucessForm, setSucessForm] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSucessForm(true);
+  };
 
   return (
     <section className="background-page">
@@ -9,28 +20,27 @@ function PlayerForm(setName) {
         <div className="form-container">
           <form>
             <label htmlFor="avatar" className="avatar-label">
-              Choisie ton avatar
+              <h2 className="title-style title-player">Choisissez un avatar</h2>
             </label>
             <div className="avatar-selection">
-              <img
-                src="https://github.com/Miadil/starwars-api/blob/master/api/assets/Luke_Skywalker.png?raw=true"
-                alt=""
-              />
-              <img
-                src="https://github.com/Miadil/starwars-api/blob/master/api/assets/Luke_Skywalker.png?raw=true"
-                alt=""
-              />
-              <img
-                src="https://github.com/Miadil/starwars-api/blob/master/api/assets/Luke_Skywalker.png?raw=true"
-                alt=""
-              />
+              {avatars.map((avatar) => (
+                <button
+                  key={avatar.id}
+                  type="button"
+                  className={`button-player-avatar ${selectAvatar === avatar.src ? "selected" : ""}`}
+                  onClick={() => setSelectAvatar(avatar.src)}
+                >
+                  <img src={avatar.src} alt={avatar.alt} />
+                </button>
+              ))}
             </div>
             <label htmlFor="name" className="name-label">
-              Quel est ton nom ?
+              Quel est votre nom ?
               <input
                 type="text"
-                onChange={(e) => setName(e.target.value)}
                 required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="input-form"
               />
             </label>
@@ -38,10 +48,16 @@ function PlayerForm(setName) {
               type="submit"
               onClick={handleSubmit}
               className="button-style button-form"
+              disabled={name === "" || selectAvatar === ""}
             >
               valider
             </button>
           </form>
+          {sucessForm && (
+            <Link to="/planetes" className="button-style">
+              Let's go
+            </Link>
+          )}
         </div>
       </div>
     </section>
