@@ -1,5 +1,66 @@
+/*font utilisée */
+@font-face {
+  font-family: "Strjmono";
+  src: url(./assets/fonts/Strjmono.ttf);
+}
+@font-face {
+  font-family: "Starjedi";
+  src: url(./assets/fonts/Starjedi.ttf);
+}
+
+/*font non-utilisée */
+@font-face {
+  font-family: "Starjhol";
+  src: url(./assets/fonts/Starjhol.ttf);
+}
+@font-face {
+  font-family: "Starjout";
+  src: url(./assets/fonts/Starjout.ttf);
+}
+@font-face {
+  font-family: "STJEDISE";
+  src: url(./assets/fonts/STJEDISE.TTF);
+}
+@font-face {
+  font-family: "Stjldbl1";
+  src: url(./assets/fonts/Stjldbl1.ttf);
+}
+@font-face {
+  font-family: "Stjldbl2";
+  src: url(./assets/fonts/Stjldbl2.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --color-text: #e1e1e1;
+  --color-button: #d8d800;
+  --bg-color-page: #282c34b3;
+  --font-title: "Strjmono";
+  --font-text: "Starjedi";
+  --font-size-title: 2rem;
+  --font-size-text: 1rem;
+}
+
+.title-style {
+  color: var(--color-text);
+  font-family: var(--font-title);
+  font-size: var(--font-size-title);
+}
+
+.text-style {
+  color: var(--color-text);
+  font-family: var(--font-text);
+  font-size: var(--font-size-text);
+  letter-spacing: 1px;
+}
+
+.background-page {
+  background: url(./assets/images/background.jpg) no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
 }
