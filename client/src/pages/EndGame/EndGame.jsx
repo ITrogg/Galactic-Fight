@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import ewok from "../../assets/images/ewok.png";
+import ewok from "../../assets/images/ewok-love.png";
 import "../../App.css";
 import "./EndGame.css";
 
@@ -22,7 +22,7 @@ function EndGame() {
               <Link to="/" type="button" className="button-style button-story">
                 fin
               </Link>
-              <img src={ewok} alt="Personnage Ewok" />
+              <img src={ewok} alt="Personnage Ewok" className="ewok-love-end" />
             </div>
           </div>
         </section>
