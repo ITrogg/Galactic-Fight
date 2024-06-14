@@ -5,7 +5,24 @@ const HackatonContext = createContext();
 export function HackatonProvider({ children }) {
   // const [name, setName] = useState("");
   // const [selectAvatar, setSelectAvatar] = useState(null);
-  const [nbVictory, setNbVictory] = useState([]);
+  const [nbVictory, setNbVictory] = useState([
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ]);
   const playerInit = {
     pv: 100,
     name: "",
