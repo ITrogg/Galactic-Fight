@@ -115,7 +115,7 @@
       margin-bottom: 2rem;
     }
     .box-story2 {
-      button {
+      .button-story {
         position: absolute;
         bottom: 0;
         right: 0;

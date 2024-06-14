@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import ewok from "../../assets/images/ewok.png";
 import "../../App.css";
+import "./EndGame.css";
 
 function EndGame() {
   const { id } = useParams();
@@ -9,7 +10,7 @@ function EndGame() {
     <main className="background-page">
       {id === "4" ? (
         <section className="display-intro">
-          <div className="box box-position-story ">
+          <div className="box box-position-story">
             <div className="text-style box-story1">
               <p>
                 votre bravoure a restauré l'espoir et la paix dans la galaxie.
@@ -40,7 +41,7 @@ function EndGame() {
               <Link to="/" type="button" className="button-style button-story">
                 fin
               </Link>
-              <img src={ewok} alt="Personnage Ewok" />
+              <img src={ewok} alt="Personnage Ewok" className="img-victory" />
             </div>
           </div>
         </section>
