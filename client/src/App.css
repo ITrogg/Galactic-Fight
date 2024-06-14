@@ -34,8 +34,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: url("./assets/images/sabreP.png"), default;
 }
-
+a img {
+  cursor: url("./assets/images/pointeur.png"), pointer;
+}
 :root {
   --color-text: #e1e1e1;
   --color-button: #d8d800;
@@ -69,7 +72,7 @@
 .button-style {
   background: var(--bg-color-page);
   color: var(--color-button);
-  cursor: pointer;
+  cursor: url("./assets/images/pointeur.png"), pointer;
   font-family: var(--font-text);
   font-size: var(--font-size-text);
   letter-spacing: 2px;
