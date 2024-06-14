@@ -51,12 +51,12 @@ function Planets() {
             <div className="box-story2">
               <button
                 type="button"
-                onClick={handleHideMessage}
                 className="button-style button-story"
+                onClick={handleHideMessage}
               >
                 fermer
               </button>
-              <img src={ewok} alt="Personnage Ewok1" />
+              <img src={ewok} alt="Personnage Ewok" />
             </div>
           </div>
         )}

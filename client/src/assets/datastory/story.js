@@ -1,11 +1,5 @@
 const storyIntro = [
   {
-    id: "7",
-    type: "Planete",
-    long_text:
-      "Ici vous retrouvez plusieurs personnages à combattre, cliquez sur l'un d'eux pour l'afronter.",
-  },
-  {
     id: "8",
     type: "Lose",
     long_text:
