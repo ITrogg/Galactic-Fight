@@ -11,7 +11,7 @@ import Planets from "./pages/Planets/Planets";
 import SelectFight from "./pages/selectFight/SelectFight";
 import PlayerForm from "./pages/PlayerForm/PlayerForm";
 import Fight from "./pages/Fight/Fight";
-
+import EndFight from "./pages/EndFight/EndFight";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +50,10 @@ const router = createBrowserRouter([
       );
       return res.data;
     },
+  },
+  {
+    path: "/adversaire/:id/:status",
+    element: <EndFight />,
   },
 ]);
 
