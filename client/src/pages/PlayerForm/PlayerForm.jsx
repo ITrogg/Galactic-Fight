@@ -15,7 +15,7 @@ const messages = [
   {
     id: "1",
     long_text:
-      "dans une galaxie lointaine, très lointaine, une nouvelle aventure vous attend. toute la galaxie est au bord de la fin, et seule une poignée de braves peut renverser la vapeur.",
+      "dans une galaxie lointaine, très lointaine, une nouvelle aventure vous attend. toute la galaxie est en ébullition, et seule une poignée de braves peut.",
   },
   {
     id: "2",
