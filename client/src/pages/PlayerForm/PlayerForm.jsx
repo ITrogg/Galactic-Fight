@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useHackaton } from "../../contexts/hackathonContext";
 import avatars from "../../assets/images/dataPlayer";
@@ -43,9 +43,13 @@ function PlayerForm() {
   const { selectAvatar, setPlayerstat, player } = useHackaton();
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const [successForm, setSuccessForm] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (player.name === "han solo") {
+      navigate(`/end/4`);
+    }
     setSuccessForm(true); // Corrected variable name to setSuccessForm
   };
 
@@ -104,9 +108,7 @@ function PlayerForm() {
                   type="text"
                   required
                   value={player.name}
-                  onChange={(e) => {
-                    setPlayerstat("name", e.target.value.toLowerCase());
-                  }}
+                  onChange={(e) => setPlayerstat("name", e.target.value)}
                   className="input-form"
                 />
               </label>
