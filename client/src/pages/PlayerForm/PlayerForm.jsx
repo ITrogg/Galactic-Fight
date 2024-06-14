@@ -58,23 +58,21 @@ function PlayerForm() {
   };
 
   return (
-    <section className="background-page">
+    <section className="background-page display-intro">
       {currentMessageIndex >= 0 ? (
-        <div className="box-center-story">
-          <div className="box box-position-story">
-            <div className="text-style box-story1">
-              {messages[currentMessageIndex].long_text}
-            </div>
-            <div className="box-story2">
-              <button
-                onClick={handleNextMessage}
-                className="button-style button-story"
-                type="button"
-              >
-                suivant
-              </button>
-              <img src={ewok} alt="Personnage Ewok" />
-            </div>
+        <div className="box box-position-story">
+          <div className="text-style box-story1">
+            {messages[currentMessageIndex].long_text}
+          </div>
+          <div className="box-story2">
+            <button
+              onClick={handleNextMessage}
+              className="button-style button-story"
+              type="button"
+            >
+              suivant
+            </button>
+            <img src={ewok} alt="Personnage Ewok" />
           </div>
         </div>
       ) : (

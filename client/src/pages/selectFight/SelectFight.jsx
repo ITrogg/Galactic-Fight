@@ -41,9 +41,9 @@ function SelectFight() {
           clear
         </button>
       </nav>
-      <div className="box-center-story2">
+      <div className="display-tuto">
         {showMessage && (
-          <div className="box box-position-story">
+          <div className="box box-position-story2">
             <p className="text-style box-story1">
               ici vous retrouvez plusieurs personnages à combattre, cliquez sur
               l'un d'eux pour l'affronter.

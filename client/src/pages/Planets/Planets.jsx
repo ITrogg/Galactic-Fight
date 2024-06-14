@@ -29,7 +29,6 @@ function Planets() {
     localStorage.clear();
   };
 
-
   const handlePlanets = () => {
     const numPlanetsToShow =
       nbVictory.length === 0 ? 1 : Math.floor((nbVictory.length + 2) / 2);
@@ -57,7 +56,7 @@ function Planets() {
         </button>
       </section>
 
-      <div className="box-center-story">
+      <div className="display-intro">
         {showMessage && (
           <div className="box box-position-story">
             <p className="text-style box-story1">
