@@ -104,7 +104,9 @@ function PlayerForm() {
                   type="text"
                   required
                   value={player.name}
-                  onChange={(e) => setPlayerstat("name", e.target.value)}
+                  onChange={(e) => {
+                    setPlayerstat("name", e.target.value.toLowerCase());
+                  }}
                   className="input-form"
                 />
               </label>
