@@ -1,5 +1,5 @@
 .page-container {
-  height: 80vh; /* 100% de la hauteur de la vue */
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
