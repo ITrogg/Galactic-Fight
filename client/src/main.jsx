@@ -54,6 +54,12 @@ const router = createBrowserRouter([
   {
     path: "/adversaire/:id/:status",
     element: <EndFight />,
+    loader: async ({ params }) => {
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/characters/${params.id}`
+      );
+      return res.data;
+    },
   },
 ]);
 

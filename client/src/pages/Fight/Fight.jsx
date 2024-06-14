@@ -27,7 +27,7 @@ function Fight() {
     player.pv -= deg;
     // Defaite ?
     if (player.pv <= 0) {
-      navigate(`/adversaire/${fighter.id}/defaite`);
+      navigate(`/planetes/${fighter.planet_id}/defaite`);
       return;
     }
     // Joueur·euse contre attaque
@@ -38,7 +38,7 @@ function Fight() {
     }));
     // Victoire ?
     if (fighter.pv <= deg) {
-      navigate(`/adversaire/${fighter.id}/victoire`);
+      navigate(`/planetes/${fighter.planet_id}`);
     }
   };
 

@@ -1,6 +1,11 @@
+import { useLoaderData } from "react-router-dom";
+import CardCharacter from "../../components/CardCharacter/CardCharacter";
+
 import "./EndFight.css";
 
 function EndFight() {
+  const [character] = useLoaderData();
+
   /**
     const { player, setPlayerstat, setNbVictory } = useHackaton();
     setNbVictory((victories) => [...victories, fighter.id]);
@@ -10,7 +15,7 @@ function EndFight() {
    */
   return (
     <main className="background-page">
-      <h1 className="title-style">oui </h1>;
+      <CardCharacter classCard="card-battle-character" character={character} />
     </main>
   );
 }
