@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useLoaderData, Link } from "react-router-dom";
 import { useHackaton } from "../../contexts/hackathonContext";
 import CardCharacter from "../../components/CardCharacter/CardCharacter";
+import Nav from "../../components/Navigation/Nav";
 import ewok from "../../assets/images/ewok.png";
 import "./selectFight.css";
 import "../../App.css";
@@ -23,24 +24,10 @@ function SelectFight() {
     localStorage.setItem("selectFightMessageShown", "true");
     setShowMessage(false);
   };
-  const handleClearLocal = () => {
-    localStorage.clear();
-  };
 
   return (
     <main className="background-page planet-detail">
-      <nav>
-        <Link className="button-style" to="/planetes">
-          Retour
-        </Link>
-        <button
-          className="button-style button-story"
-          onClick={handleClearLocal}
-          type="button"
-        >
-          clear
-        </button>
-      </nav>
+      <Nav />
       <div className="box-center-story2">
         {showMessage && (
           <div className="box box-position-story">
