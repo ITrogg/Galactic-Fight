@@ -85,6 +85,11 @@
 .button-style:hover {
   animation: pulse 2.5s infinite;
 }
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--color-button);
+  }
+}
 
 .box {
   background-color: var(--bg-color-page);
@@ -93,11 +98,6 @@
   border-radius: 5px;
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 var(--color-button);
-  }
-}
 .display-intro {
   height: 100vh;
   display: flex;
