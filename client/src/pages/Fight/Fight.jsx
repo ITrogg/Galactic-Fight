@@ -12,7 +12,22 @@ function Fight() {
   const navigate = useNavigate();
   const lauchAttack = () => {
     let deg = 0;
-    // Joueur attaque
+    // PNJ attaque
+    if (fighter.atk > player.def) {
+      deg = fighter.atk * 4;
+    } else if (fighter.atk < player.def) {
+      deg = fighter.atk;
+    } else {
+      deg = fighter.atk * 2;
+    }
+    player.pv -= deg;
+    // Defaite ?
+    if (player.pv <= 0) {
+      setPlayerstat("pv", 100);
+      navigate(`/planetes/${fighter.planet_id}`);
+      return;
+    }
+    // Joueur contre attaque
     if (player.atk > fighter.def) {
       deg = player.atk * 3;
     } else if (player.atk < fighter.def) {
@@ -30,21 +45,6 @@ function Fight() {
       setPlayerstat("pv", 100);
       setPlayerstat("atk", player.atk + 2);
       setPlayerstat("def", player.def + 3);
-      navigate(`/planetes/${fighter.planet_id}`);
-      return;
-    }
-    // PNJ contre - attaque
-    if (fighter.atk > player.def) {
-      deg = fighter.atk * 4;
-    } else if (fighter.atk < player.def) {
-      deg = fighter.atk;
-    } else {
-      deg = fighter.atk * 2;
-    }
-    player.pv -= deg;
-    // Defaite ?
-    if (player.pv <= 0) {
-      setPlayerstat("pv", 100);
       navigate(`/planetes/${fighter.planet_id}`);
     }
   };
