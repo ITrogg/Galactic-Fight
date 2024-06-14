@@ -9,7 +9,7 @@ import "../../App.css";
 
 function Planets() {
   const planets = useLoaderData();
-  const { nbVictory, player } = useHackaton();
+  const { nbVictory, player, setPlayerstat } = useHackaton();
   const [filteredPlanets, setFilteredPlanets] = useState([]);
   const [showMessage, setShowMessage] = useState(true);
 
@@ -28,6 +28,8 @@ function Planets() {
   const handleClearLocal = () => {
     localStorage.clear();
   };
+  
+  if (player.pv !== 100) setPlayerstat("pv", 100);
 
   const handlePlanets = () => {
     const numPlanetsToShow =

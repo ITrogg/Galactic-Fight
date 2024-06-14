@@ -2,13 +2,16 @@ import { useState, useEffect } from "react";
 import { useLoaderData, Link } from "react-router-dom";
 import { useHackaton } from "../../contexts/hackathonContext";
 import CardCharacter from "../../components/CardCharacter/CardCharacter";
+import Nav from "../../components/Navigation/Nav";
 import ewok from "../../assets/images/ewok.png";
 import "./selectFight.css";
 import "../../App.css";
 
 function SelectFight() {
   const characters = useLoaderData();
-  const { player } = useHackaton();
+  const { player, nbVictory, setPlayerstat } = useHackaton();
+  if (player.pv !== 100) setPlayerstat("pv", 100);
+
   const [showMessage, setShowMessage] = useState(true);
 
   useEffect(() => {
@@ -22,9 +25,6 @@ function SelectFight() {
   const handleHideMessage = () => {
     localStorage.setItem("selectFightMessageShown", "true");
     setShowMessage(false);
-  };
-  const handleClearLocal = () => {
-    localStorage.clear();
   };
 
   return (
@@ -79,14 +79,24 @@ function SelectFight() {
         </div>
       </div>
       <div className="bad-guys">
-        {characters.map((character) => (
-          <Link key={character.id} to={`/adversaire/${character.id}`}>
-            <CardCharacter
-              classCard="card-bad-character"
-              character={character}
-            />
-          </Link>
-        ))}
+        {characters.map((character) => {
+          const isDead = nbVictory.includes(character.id);
+          return (
+            <Link
+              key={character.id}
+              to={
+                isDead
+                  ? `/planetes/${character.planet_id}`
+                  : `/adversaire/${character.id}`
+              }
+            >
+              <CardCharacter
+                classCard={`card-bad-character ${isDead ? "card-dead-character" : ""}`}
+                character={character}
+              />
+            </Link>
+          );
+        })}
       </div>
       <CardCharacter classCard="card-main-character" character={player} />
     </main>
