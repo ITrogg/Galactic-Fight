@@ -30,16 +30,7 @@ function SelectFight() {
   return (
     <main className="background-page planet-detail">
       <nav>
-        <Link className="button-style" to="/planetes">
-          Retour
-        </Link>
-        <button
-          className="button-style button-story"
-          onClick={handleClearLocal}
-          type="button"
-        >
-          clear
-        </button>
+        <Nav />
       </nav>
       <div className="display-tuto">
         {showMessage && (
