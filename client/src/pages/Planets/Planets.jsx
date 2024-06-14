@@ -9,7 +9,6 @@ function Planets() {
   const planets = useLoaderData();
   const { nbVictory, player } = useHackaton();
   const [filteredPlanets, setFilteredPlanets] = useState([]);
-
   const handlePlanets = () => {
     const numPlanetsToShow =
       nbVictory.length === 0 ? 1 : Math.floor((nbVictory.length + 2) / 2);

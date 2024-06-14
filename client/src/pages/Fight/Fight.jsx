@@ -8,7 +8,7 @@ import "./Fight.css";
 function Fight() {
   const [character] = useLoaderData();
   const [fighter, setFighter] = useState(character);
-  const { player, setPlayerstat } = useHackaton();
+  const { player, setPlayerstat, setNbVictory } = useHackaton();
   const navigate = useNavigate();
   const lauchAttack = () => {
     let deg = 0;
@@ -26,6 +26,7 @@ function Fight() {
     }));
     // Victoire ?
     if (fighter.pv <= 0) {
+      setNbVictory((victories) => [...victories, fighter.id]);
       setPlayerstat("pv", 100);
       navigate(`/planetes/${fighter.planet_id}`);
     }

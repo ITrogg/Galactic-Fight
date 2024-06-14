@@ -9,7 +9,6 @@ export function HackatonProvider({ children }) {
   const playerInit = {
     pv: 100,
     name: "",
-    nb_victory: [],
     atk: 20,
     def: 15,
     image: "",
