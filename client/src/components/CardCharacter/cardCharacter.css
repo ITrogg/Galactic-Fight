@@ -1,8 +1,8 @@
 .card-bad-character {
   position: relative;
-  width: 20rem;
+  width: 70%;
   img {
-    width: 20rem;
+    width: 100%rem;
   }
   p {
     color: white;
