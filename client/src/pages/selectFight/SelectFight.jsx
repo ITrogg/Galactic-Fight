@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLoaderData, Link } from "react-router-dom";
+import { useHackaton } from "../../contexts/hackathonContext";
 import CardCharacter from "../../components/CardCharacter/CardCharacter";
 import ewok from "../../assets/images/ewok.png";
 import "./selectFight.css";
@@ -7,6 +8,7 @@ import "../../App.css";
 
 function SelectFight() {
   const characters = useLoaderData();
+  const { player } = useHackaton();
   const [showMessage, setShowMessage] = useState(true);
 
   useEffect(() => {
@@ -24,7 +26,7 @@ function SelectFight() {
   const handleClearLocal = () => {
     localStorage.clear();
   };
-
+  
   return (
     <main className="background-page planet-detail">
       <nav>
@@ -86,6 +88,7 @@ function SelectFight() {
           </Link>
         ))}
       </div>
+      <CardCharacter classCard="card-main-character" character={player} />
     </main>
   );
 }

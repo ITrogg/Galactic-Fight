@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useHackaton } from "../../contexts/hackathonContext";
+import avatars from "../../assets/images/dataPlayer";
 import ewok from "../../assets/images/ewok.png";
 import "./PlayerForm.css";
 import "../../App.css";
+
 
 const messages = [
   {
@@ -36,8 +40,16 @@ const messages = [
   },
 ];
 
-function PlayerForm({ setName }) {
+function PlayerForm() {
+  const { selectAvatar, setPlayerstat, player } = useHackaton();
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+  const [sucessForm, setSucessForm] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSucessForm(true);
+  };
+  
 
   const handleNextMessage = () => {
     if (currentMessageIndex < messages.length - 1) {
@@ -49,8 +61,6 @@ function PlayerForm({ setName }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  };
-
   return (
     <section className="background-page">
       {currentMessageIndex >= 0 ? (
@@ -72,40 +82,48 @@ function PlayerForm({ setName }) {
           </div>
         </div>
       ) : (
-        <div className="box-center-story">
-          <div className="form-container">
-            <form onSubmit={handleSubmit}>
-              <label htmlFor="avatar" className="avatar-label">
-                choisie ton avatar
-              </label>
-              <div className="avatar-selection">
-                <img
-                  src="https://github.com/Miadil/starwars-api/blob/master/api/assets/Luke_Skywalker.png?raw=true"
-                  alt="Avatar 1"
-                />
-                <img
-                  src="https://github.com/Miadil/starwars-api/blob/master/api/assets/Luke_Skywalker.png?raw=true"
-                  alt="Avatar 2"
-                />
-                <img
-                  src="https://github.com/Miadil/starwars-api/blob/master/api/assets/Luke_Skywalker.png?raw=true"
-                  alt="Avatar 3"
-                />
-              </div>
-              <label htmlFor="name" className="name-label">
-                quel est ton nom ?
-                <input
-                  type="text"
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                  className="input-form"
-                />
-              </label>
-              <button type="submit" className="button-style button-form">
-                valider
-              </button>
-            </form>
-          </div>
+      <div className="box-center-story">
+        <div className="form-container">
+          <form>
+            <label htmlFor="avatar" className="avatar-label">
+              <h2 className="title-style title-player">Choisissez un avatar</h2>
+            </label>
+            <div className="avatar-selection">
+              {avatars.map((avatar) => (
+                <button
+                  key={avatar.id}
+                  type="button"
+                  className={`button-player-avatar ${selectAvatar === avatar.src ? "selected" : ""}`}
+                  onClick={() => setPlayerstat("image", avatar.src)}
+                >
+                  <img src={avatar.src} alt={avatar.alt} />
+                </button>
+              ))}
+            </div>
+            <label htmlFor="name" className="name-label">
+              Quel est votre nom ?
+              <input
+                type="text"
+                required
+                value={player.name}
+                onChange={(e) => setPlayerstat("name", e.target.value)}
+                className="input-form"
+              />
+            </label>
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="button-style button-form"
+              disabled={player.name === "" || selectAvatar === ""}
+            >
+              valider
+            </button>
+          </form>
+          {sucessForm && (
+            <Link to="/planetes" className="button-style">
+              Let's go
+            </Link>
+          )}
         </div>
       )}
     </section>

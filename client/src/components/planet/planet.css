@@ -6,33 +6,74 @@ img {
   position: absolute;
   bottom: 10%;
   left: 15%;
+  h2 {
+    text-align: center;
+  }
 }
 .planet-2 {
   position: absolute;
   bottom: 17%;
   left: 45%;
+  h2 {
+    text-align: center;
+  }
 }
 .planet-3 {
   position: absolute;
   bottom: 33%;
   right: 10%;
+  h2 {
+    text-align: center;
+  }
 }
 .planet-4 {
   position: absolute;
   top: 20%;
   left: 60%;
+  h2 {
+    text-align: center;
+  }
 }
 .planet-5 {
   position: absolute;
   top: 20%;
   left: 35%;
+  h2 {
+    text-align: center;
+  }
 }
 .planet-6 {
   position: absolute;
   top: 5%;
   left: 10%;
+  h2 {
+    text-align: center;
+  }
 }
 
 .planet-7 {
-  display: none;
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  h2 {
+    text-align: center;
+  }
+}
+.planets-all {
+  img:hover {
+    border-radius: 50%;
+    border: solid 2px var(--color-button);
+    animation: pulse 2.5s infinite;
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--color-button);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
 }

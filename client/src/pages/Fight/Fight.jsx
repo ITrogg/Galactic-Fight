@@ -11,7 +11,38 @@ function Fight() {
   const { player, setPlayerstat } = useHackaton();
   console.info(setFighter);
   const lauchAttack = () => {
-    setPlayerstat("atk", 5);
+    let deg = 0;
+    // Joueur attaque
+    if (player.atk > fighter.def) {
+      deg = player.atk * 4;
+    } else if (player.atk < fighter.def) {
+      deg = player.atk;
+    } else {
+      deg = player.atk * 2;
+    }
+    setFighter((prev) => ({
+      ...prev,
+      pv: prev.pv - deg,
+    }));
+    // Victoire ?
+    if (fighter.pv <= 0) {
+      setPlayerstat("atk", "ouiiii");
+      setPlayerstat("def", "ouiiii");
+    }
+    // PNJ contre - attaque
+    if (fighter.atk > player.def) {
+      deg = fighter.atk * 4;
+    } else if (fighter.atk < player.def) {
+      deg = fighter.atk;
+    } else {
+      deg = fighter.atk * 2;
+    }
+    player.pv -= deg;
+    // Defaite ?
+    if (player.pv <= 0) {
+      setPlayerstat("atk", 0);
+      setPlayerstat("def", 0);
+    }
   };
 
   return (
