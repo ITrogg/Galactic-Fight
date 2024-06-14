@@ -7,8 +7,9 @@ import "./planets.css";
 
 function Planets() {
   const planets = useLoaderData();
-  const { nbVictory, player } = useHackaton();
+  const { nbVictory, player, setPlayerstat } = useHackaton();
   const [filteredPlanets, setFilteredPlanets] = useState([]);
+  if (player.pv !== 100) setPlayerstat("pv", 100);
   const handlePlanets = () => {
     const numPlanetsToShow =
       nbVictory.length === 0 ? 1 : Math.floor((nbVictory.length + 2) / 2);

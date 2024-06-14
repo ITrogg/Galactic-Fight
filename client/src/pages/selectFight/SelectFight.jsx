@@ -6,7 +6,8 @@ import "./selectFight.css";
 
 function SelectFight() {
   const characters = useLoaderData();
-  const { player, nbVictory } = useHackaton();
+  const { player, nbVictory, setPlayerstat } = useHackaton();
+  if (player.pv !== 100) setPlayerstat("pv", 100);
   return (
     <main className="background-page planet-detail">
       <nav>

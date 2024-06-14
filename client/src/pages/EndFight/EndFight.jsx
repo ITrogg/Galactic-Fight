@@ -10,7 +10,6 @@ function EndFight() {
   const { player, setNbVictory, setPlayerstat } = useHackaton();
   const modifiedID = parseInt(id, 10);
   const handleVictories = (att) => {
-    setPlayerstat("pv", 100);
     setNbVictory((victories) => [...victories, modifiedID]);
     if (att === "atk") {
       setPlayerstat("atk", player.atk + 5);
@@ -46,11 +45,7 @@ function EndFight() {
             classCard="card-battle-character"
             character={character}
           />
-          <Link
-            className="button-style"
-            to="/planetes"
-            onClick={() => setPlayerstat("pv", 100)}
-          >
+          <Link className="button-style" to="/planetes">
             retour
           </Link>
         </div>
