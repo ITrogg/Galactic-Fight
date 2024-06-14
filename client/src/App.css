@@ -102,11 +102,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  .box-position-story {
+    max-width: 60%;
+    min-width: 60%;
+  }
 }
 
-.box-position-story {
-  max-width: 60%;
-  min-width: 60%;
+.box-center-story2 {
+  height: 10rem;
+  width: 40rem;
+  display: flex;
+  position: absolute;
+  top: 5%;
+  right: auto;
+  .box-position-story {
+    width: 100%;
+  }
 }
 
 .box-story1 {
@@ -123,8 +134,7 @@
 .box-story2 img {
   width: 10rem;
   position: absolute;
-  left: 16%;
-  top: 38%;
+  left: 0;
 }
 
 .button-story {

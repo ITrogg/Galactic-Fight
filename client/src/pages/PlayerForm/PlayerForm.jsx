@@ -6,7 +6,6 @@ import ewok from "../../assets/images/ewok.png";
 import "./PlayerForm.css";
 import "../../App.css";
 
-
 const messages = [
   {
     id: "0",
@@ -43,13 +42,12 @@ const messages = [
 function PlayerForm() {
   const { selectAvatar, setPlayerstat, player } = useHackaton();
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
-  const [sucessForm, setSucessForm] = useState(false);
+  const [successForm, setSuccessForm] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSucessForm(true);
+    setSuccessForm(true); // Corrected variable name to setSuccessForm
   };
-  
 
   const handleNextMessage = () => {
     if (currentMessageIndex < messages.length - 1) {
@@ -59,8 +57,6 @@ function PlayerForm() {
     }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
   return (
     <section className="background-page">
       {currentMessageIndex >= 0 ? (
@@ -82,48 +78,52 @@ function PlayerForm() {
           </div>
         </div>
       ) : (
-      <div className="box-center-story">
-        <div className="form-container">
-          <form>
-            <label htmlFor="avatar" className="avatar-label">
-              <h2 className="title-style title-player">Choisissez un avatar</h2>
-            </label>
-            <div className="avatar-selection">
-              {avatars.map((avatar) => (
-                <button
-                  key={avatar.id}
-                  type="button"
-                  className={`button-player-avatar ${selectAvatar === avatar.src ? "selected" : ""}`}
-                  onClick={() => setPlayerstat("image", avatar.src)}
-                >
-                  <img src={avatar.src} alt={avatar.alt} />
-                </button>
-              ))}
-            </div>
-            <label htmlFor="name" className="name-label">
-              Quel est votre nom ?
-              <input
-                type="text"
-                required
-                value={player.name}
-                onChange={(e) => setPlayerstat("name", e.target.value)}
-                className="input-form"
-              />
-            </label>
-            <button
-              type="submit"
-              onClick={handleSubmit}
-              className="button-style button-form"
-              disabled={player.name === "" || selectAvatar === ""}
-            >
-              valider
-            </button>
-          </form>
-          {sucessForm && (
-            <Link to="/planetes" className="button-style">
-              Let's go
-            </Link>
-          )}
+        <div className="box-center-story">
+          <div className="form-container">
+            <form onSubmit={handleSubmit}>
+              {" "}
+              {/* Added onSubmit handler */}
+              <label htmlFor="avatar" className="avatar-label">
+                <h2 className="title-style title-player">
+                  Choisissez un avatar
+                </h2>
+              </label>
+              <div className="avatar-selection">
+                {avatars.map((avatar) => (
+                  <button
+                    key={avatar.id}
+                    type="button"
+                    className={`button-player-avatar ${selectAvatar === avatar.src ? "selected" : ""}`}
+                    onClick={() => setPlayerstat("image", avatar.src)}
+                  >
+                    <img src={avatar.src} alt={avatar.alt} />
+                  </button>
+                ))}
+              </div>
+              <label htmlFor="name" className="name-label">
+                Quel est votre nom ?
+                <input
+                  type="text"
+                  required
+                  value={player.name}
+                  onChange={(e) => setPlayerstat("name", e.target.value)}
+                  className="input-form"
+                />
+              </label>
+              <button
+                type="submit"
+                className="button-style button-form"
+                disabled={player.name === "" || selectAvatar === ""}
+              >
+                valider
+              </button>
+            </form>
+            {successForm && (
+              <Link to="/planetes" className="button-style">
+                Let's go
+              </Link>
+            )}
+          </div>
         </div>
       )}
     </section>
