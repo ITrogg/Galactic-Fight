@@ -1,11 +1,20 @@
 import { useParams, Link } from "react-router-dom";
+import { useHackaton } from "../../contexts/hackathonContext";
 import ewok from "../../assets/images/ewok-love.png";
 import "../../App.css";
 import "./EndGame.css";
 
 function EndGame() {
   const { id } = useParams();
-
+  const { setNbVictory, setPlayerstat } = useHackaton();
+  const reinitGame = () => {
+    localStorage.clear();
+    setNbVictory([]);
+    setPlayerstat("name", "");
+    setPlayerstat("image", "");
+    setPlayerstat("atk", 20);
+    setPlayerstat("def", 15);
+  };
   return (
     <main className="background-page">
       {id === "4" ? (
@@ -38,7 +47,12 @@ function EndGame() {
               </p>
             </div>
             <div className="box-story2">
-              <Link to="/" type="button" className="button-style button-story">
+              <Link
+                to="/"
+                type="button"
+                onClick={reinitGame}
+                className="button-style button-story"
+              >
                 fin
               </Link>
               <img src={ewok} alt="Personnage Ewok" className="img-victory" />
