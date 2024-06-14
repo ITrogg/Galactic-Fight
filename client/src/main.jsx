@@ -12,6 +12,7 @@ import SelectFight from "./pages/selectFight/SelectFight";
 import PlayerForm from "./pages/PlayerForm/PlayerForm";
 import Fight from "./pages/Fight/Fight";
 import EndFight from "./pages/EndFight/EndFight";
+import EndGame from "./pages/EndGame/EndGame";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       );
       return res.data;
     },
+  },
+  {
+    path: "/end/:id",
+    element: <EndGame />,
   },
 ]);
 
