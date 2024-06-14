@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import CardCharacter from "../../components/CardCharacter/CardCharacter";
 import { useHackaton } from "../../contexts/hackathonContext";
@@ -9,7 +9,7 @@ function Fight() {
   const [character] = useLoaderData();
   const [fighter, setFighter] = useState(character);
   const { player, setPlayerstat } = useHackaton();
-  console.info(setFighter);
+  const navigate = useNavigate();
   const lauchAttack = () => {
     let deg = 0;
     // Joueur attaque
@@ -27,7 +27,7 @@ function Fight() {
     // Victoire ?
     if (fighter.pv <= 0) {
       setPlayerstat("atk", "ouiiii");
-      setPlayerstat("def", "ouiiii");
+      navigate(`/planetes/${fighter.planet_id}`);
     }
     // PNJ contre - attaque
     if (fighter.atk > player.def) {
@@ -40,8 +40,7 @@ function Fight() {
     player.pv -= deg;
     // Defaite ?
     if (player.pv <= 0) {
-      setPlayerstat("atk", 0);
-      setPlayerstat("def", 0);
+      navigate(`/planetes/${fighter.planet_id}`);
     }
   };
 

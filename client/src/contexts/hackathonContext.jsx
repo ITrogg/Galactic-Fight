@@ -10,8 +10,8 @@ export function HackatonProvider({ children }) {
     pv: 100,
     name: "",
     nb_victory: [],
-    atk: 35,
-    def: 60,
+    atk: 20,
+    def: 15,
     image: "",
   };
   const [player, setPlayer] = useState(playerInit);
