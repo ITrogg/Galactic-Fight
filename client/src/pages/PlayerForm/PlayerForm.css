@@ -30,6 +30,7 @@
     .selected-avatar {
       background: transparent;
       border: none;
+      width: 30%;
     }
     .selected-avatar:hover {
       cursor: pointer;
