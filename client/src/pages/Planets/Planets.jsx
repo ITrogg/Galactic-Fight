@@ -58,7 +58,7 @@ function Planets() {
         </button>
       </section>
 
-      <div className="box-center-story">
+      <div className="display-intro">
         {showMessage && (
           <div className="box box-position-story">
             <p className="text-style box-story1">

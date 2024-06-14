@@ -29,10 +29,21 @@ function SelectFight() {
 
   return (
     <main className="background-page planet-detail">
-      <Nav />
-      <div className="box-center-story2">
+      <nav>
+        <Link className="button-style" to="/planetes">
+          Retour
+        </Link>
+        <button
+          className="button-style button-story"
+          onClick={handleClearLocal}
+          type="button"
+        >
+          clear
+        </button>
+      </nav>
+      <div className="display-tuto">
         {showMessage && (
-          <div className="box box-position-story">
+          <div className="box box-position-story2">
             <p className="text-style box-story1">
               ici vous retrouvez plusieurs personnages à combattre, cliquez sur
               l'un d'eux pour l'affronter.
