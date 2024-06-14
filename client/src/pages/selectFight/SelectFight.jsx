@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLoaderData, Link } from "react-router-dom";
 import { useHackaton } from "../../contexts/hackathonContext";
 import CardCharacter from "../../components/CardCharacter/CardCharacter";
-import Nav from "../../components/Navigation/Nav";
+import ship from "../../assets/images/ship.png";
 import ewok from "../../assets/images/ewok.png";
 import "./selectFight.css";
 import "../../App.css";
@@ -29,9 +29,9 @@ function SelectFight() {
 
   return (
     <main className="background-page planet-detail">
-      <nav>
-        <Nav />
-      </nav>
+      <Link to="/planetes" className="ship-position">
+        <img src={ship} alt="Vaisseau spacial" />
+      </Link>
       <div className="display-tuto">
         {showMessage && (
           <div className="box box-position-story2">
