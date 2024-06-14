@@ -136,7 +136,12 @@
     bottom: 4%;
   }
 }
-
+.card-dead-character {
+  img,
+  p {
+    filter: blur(2px);
+  }
+}
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 var(--color-button);
