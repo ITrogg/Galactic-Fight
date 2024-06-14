@@ -14,7 +14,7 @@ function Fight() {
     let deg = 0;
     // Joueur attaque
     if (player.atk > fighter.def) {
-      deg = player.atk * 4;
+      deg = player.atk * 3;
     } else if (player.atk < fighter.def) {
       deg = player.atk;
     } else {
@@ -25,10 +25,13 @@ function Fight() {
       pv: prev.pv - deg,
     }));
     // Victoire ?
-    if (fighter.pv <= 0) {
+    if (fighter.pv <= deg) {
       setNbVictory((victories) => [...victories, fighter.id]);
       setPlayerstat("pv", 100);
+      setPlayerstat("atk", player.atk + 2);
+      setPlayerstat("def", player.def + 3);
       navigate(`/planetes/${fighter.planet_id}`);
+      return;
     }
     // PNJ contre - attaque
     if (fighter.atk > player.def) {
@@ -53,7 +56,11 @@ function Fight() {
         <CardCharacter classCard="card-battle-character" character={fighter} />
         <CardCharacter classCard="card-battle-character" character={player} />
       </div>
-      <button type="button" onClick={() => lauchAttack()}>
+      <button
+        type="button"
+        className="button-style"
+        onClick={() => lauchAttack()}
+      >
         Attaquer
       </button>
     </main>
