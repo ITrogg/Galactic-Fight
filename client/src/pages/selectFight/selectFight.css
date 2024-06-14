@@ -50,3 +50,23 @@
     }
   }
 }
+
+.ship-position {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 8%;
+  color: var(--color-button);
+  border: 0.2rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 0 1em transparent;
+}
+.ship-position:hover {
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    filter: box-shadow(0 0 0 0 var(--color-button));
+  }
+}
