@@ -24,15 +24,18 @@ function EndFight() {
         <div className="end-page-victory">
           <CardCharacter classCard="card-battle-character" character={player} />
           <section className="box choice-stat">
-            <h1 className="title-style">vous avez gagner ce combat </h1>
+            <h1 className="title-style">vous avez gagne ce combat </h1>
             <img
               className="gif-victory"
               src="https://i.giphy.com/3FQ9mRcb94aogeTvmj.webp"
               alt="gif ewok"
             />
             <p className="text-style">
-              preparez vous pour le prochain combat. <br /> choisissez la
-              statistique que vous voulez augmenter.
+              Bravo, glorieuse victoire! mais ne vous reposez pas vos lauriers.
+              preparez vous pour le prochain combat.
+            </p>
+            <p className="text-style">
+              choisissez la statistique que vous voulez augmenter de 5 points.
             </p>
             <nav className="buttons-set-stat">
               <Link
@@ -40,14 +43,14 @@ function EndFight() {
                 to="/planetes"
                 onClick={() => handleVictories("atk")}
               >
-                Attaque
+                attaque
               </Link>
               <Link
                 className="button-style"
                 to="/planetes"
                 onClick={() => handleVictories("def")}
               >
-                Defense
+                defence
               </Link>
             </nav>
           </section>
@@ -60,11 +63,17 @@ function EndFight() {
           />
           <section className="box choice-stat">
             <h1 className="title-style">vous avez perdu ce combat </h1>
+            <img
+              className="gif-defeat"
+              src="https://www.icegif.com/wp-content/uploads/2022/05/icegif-145.gif"
+              alt=""
+            />
             <p className="text-style">
               malheureusement, la force n'était pas au rendez-vous. mais ne
               perdez pas espoir ! chaque défaite est une occasion d'apprendre et
-              de s'améliorer. alors, debout et retournez au combat.
+              de s'améliorer.
             </p>
+            <p className="text-style"> alors, debout et retournez au combat.</p>
             <nav className="buttons-set-stat">
               <Link className="button-style" to="/planetes">
                 retour

@@ -4,17 +4,39 @@
   align-items: center;
   .choice-stat {
     height: fit-content;
+    width: 33%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     align-items: center;
     justify-content: center;
     .gif-victory {
-      height: 10rem;
-      width: 10rem;
+      height: 35%;
+      width: 35%;
     }
     .buttons-set-stat {
       margin-top: 10%;
+    }
+  }
+}
+.end-page-defeat {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .choice-stat {
+    height: fit-content;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    .gif-defeat {
+      max-height: 30%;
+      max-width: 50%;
+    }
+    .buttons-set-stat {
+      margin-top: 2%;
     }
   }
 }
