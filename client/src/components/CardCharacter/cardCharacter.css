@@ -32,9 +32,9 @@
 }
 .card-battle-character {
   position: relative;
-  width: 50rem;
+  width: 30%;
   img {
-    width: 50rem;
+    width: 100%;
   }
   p {
     color: white;
