@@ -26,7 +26,7 @@ function Fight() {
     }));
     // Victoire ?
     if (fighter.pv <= 0) {
-      setPlayerstat("atk", "ouiiii");
+      setPlayerstat("pv", 100);
       navigate(`/planetes/${fighter.planet_id}`);
     }
     // PNJ contre - attaque
@@ -40,6 +40,7 @@ function Fight() {
     player.pv -= deg;
     // Defaite ?
     if (player.pv <= 0) {
+      setPlayerstat("pv", 100);
       navigate(`/planetes/${fighter.planet_id}`);
     }
   };
