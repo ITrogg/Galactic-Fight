@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLoaderData, Link } from "react-router-dom";
+import { useLoaderData, Link, useNavigate } from "react-router-dom";
 import { useHackaton } from "../../contexts/hackathonContext";
 import ewok from "../../assets/images/ewok.png";
 import Planet from "../../components/planet/Planet";
@@ -9,10 +9,10 @@ import "../../App.css";
 
 function Planets() {
   const planets = useLoaderData();
-  const { nbVictory, player, setPlayerstat } = useHackaton();
+  const { setNbVictory, nbVictory, player, setPlayerstat } = useHackaton();
   const [filteredPlanets, setFilteredPlanets] = useState([]);
   const [showMessage, setShowMessage] = useState(true);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const messageShown = localStorage.getItem("messageShown");
 
@@ -25,10 +25,16 @@ function Planets() {
     localStorage.setItem("messageShown", "true");
     setShowMessage(false);
   };
-  const handleClearLocal = () => {
+  const reinitGame = () => {
     localStorage.clear();
+    setNbVictory([]);
+    setPlayerstat("name", "");
+    setPlayerstat("image", "");
+    setPlayerstat("atk", 20);
+    setPlayerstat("def", 15);
+    navigate(`/`);
   };
-  
+
   if (player.pv !== 100) setPlayerstat("pv", 100);
 
   const handlePlanets = () => {
@@ -51,10 +57,10 @@ function Planets() {
         ))}
         <button
           className="button-style button-story"
-          onClick={handleClearLocal}
+          onClick={reinitGame}
           type="button"
         >
-          clear
+          reset
         </button>
       </section>
 

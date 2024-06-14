@@ -50,7 +50,7 @@ function EndFight() {
                 to="/planetes"
                 onClick={() => handleVictories("def")}
               >
-                defence
+                defense
               </Link>
             </nav>
           </section>
