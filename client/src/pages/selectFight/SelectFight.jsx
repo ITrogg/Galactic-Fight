@@ -26,7 +26,7 @@ function SelectFight() {
   const handleClearLocal = () => {
     localStorage.clear();
   };
-  
+
   return (
     <main className="background-page planet-detail">
       <nav>
@@ -40,27 +40,27 @@ function SelectFight() {
         >
           clear
         </button>
-        <div className="box-center-story">
-          {showMessage && (
-            <div className="box box-position-story">
-              <p className="text-style box-story1">
-                ici vous retrouvez plusieurs personnages à combattre, cliquez
-                sur l'un d'eux pour l'affronter.
-              </p>
-              <div className="box-story2">
-                <button
-                  type="button"
-                  className="button-style button-story"
-                  onClick={handleHideMessage}
-                >
-                  fermer
-                </button>
-                <img src={ewok} alt="Personnage Ewok1" />
-              </div>
-            </div>
-          )}
-        </div>
       </nav>
+      <div className="box-center-story2">
+        {showMessage && (
+          <div className="box box-position-story">
+            <p className="text-style box-story1">
+              ici vous retrouvez plusieurs personnages à combattre, cliquez sur
+              l'un d'eux pour l'affronter.
+            </p>
+            <div className="box-story2">
+              <button
+                type="button"
+                className="button-style button-story"
+                onClick={handleHideMessage}
+              >
+                fermer
+              </button>
+              <img src={ewok} alt="Personnage Ewok1" />
+            </div>
+          </div>
+        )}
+      </div>
       <div className="selected-planet-detail">
         <img
           className="img-planet-detail"
