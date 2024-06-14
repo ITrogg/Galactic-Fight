@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useParams, Link } from "react-router-dom";
 import { useHackaton } from "../../contexts/hackathonContext";
 import CardCharacter from "../../components/CardCharacter/CardCharacter";
 
@@ -22,6 +22,9 @@ function EndFight() {
           character={character}
         />
       )}
+      <Link className="button-style" to="/planetes">
+        retour
+      </Link>
     </main>
   );
 }
