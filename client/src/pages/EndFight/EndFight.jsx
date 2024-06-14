@@ -7,24 +7,54 @@ import "./EndFight.css";
 function EndFight() {
   const [character] = useLoaderData();
   const { id, status } = useParams();
-  const { player } = useHackaton();
-  console.info(id);
-  // setNbVictory((victories) => [...victories, id]);
-  // setPlayerstat("atk", player.atk + 2);
-  // setPlayerstat("def", player.def + 3);
+  const { player, setNbVictory, setPlayerstat } = useHackaton();
+
+  const handleVictories = (att) => {
+    setPlayerstat("pv", 100);
+    setNbVictory((victories) => [...victories, id]);
+    if (att === "atk") {
+      setPlayerstat("atk", player.atk + 5);
+    } else {
+      setPlayerstat("def", player.def + 5);
+    }
+  };
   return (
     <main className="background-page">
       {status === "victoire" ? (
-        <CardCharacter classCard="card-battle-character" character={player} />
+        <div className="end-page-victory">
+          <CardCharacter classCard="card-battle-character" character={player} />
+          <section className="choice-stat">
+            <Link
+              className="button-style"
+              to="/planetes"
+              onClick={() => handleVictories("atk")}
+            >
+              Attaque
+            </Link>
+            <Link
+              className="button-style"
+              to="/planetes"
+              onClick={() => handleVictories("def")}
+            >
+              Defense
+            </Link>
+          </section>
+        </div>
       ) : (
-        <CardCharacter
-          classCard="card-battle-character"
-          character={character}
-        />
+        <div className="end-page-defeat">
+          <CardCharacter
+            classCard="card-battle-character"
+            character={character}
+          />
+          <Link
+            className="button-style"
+            to="/planetes"
+            onClick={() => setPlayerstat("pv", 100)}
+          >
+            retour
+          </Link>
+        </div>
       )}
-      <Link className="button-style" to="/planetes">
-        retour
-      </Link>
     </main>
   );
 }
