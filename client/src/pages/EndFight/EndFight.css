@@ -1,5 +1,6 @@
 .end-page-victory {
   display: flex;
+  height: 100vh;
   justify-content: space-around;
   align-items: center;
   .choice-stat {
@@ -21,6 +22,7 @@
 }
 .end-page-defeat {
   display: flex;
+  height: 100vh;
   justify-content: space-around;
   align-items: center;
   .choice-stat {

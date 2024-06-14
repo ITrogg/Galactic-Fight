@@ -102,8 +102,8 @@ function PlayerForm() {
                 </button>
               ))}
             </div>
-            <label htmlFor="name" className="name-label box">
-              Quel est votre nom ?
+            <label htmlFor="name" className="name-label box text-style">
+              quel est votre nom ?
               <input
                 type="text"
                 required
