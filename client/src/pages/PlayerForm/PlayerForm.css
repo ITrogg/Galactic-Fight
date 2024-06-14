@@ -31,9 +31,11 @@
       background: transparent;
       border: none;
       width: 30%;
+      img {
+        cursor: url("../../assets/images/pointeur.png"), pointer;
+      }
     }
     .selected-avatar:hover {
-      cursor: pointer;
       border-radius: 50%;
       border: solid 4px var(--color-button);
     }
@@ -66,6 +68,6 @@
     cursor: pointer;
   }
   .button-player-avatar.selected {
-    border: 2px solid black; /* Contour noir autour de l'image sélectionnée */
+    border: 2px solid black;
   }
 }
