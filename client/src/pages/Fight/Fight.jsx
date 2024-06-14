@@ -39,7 +39,9 @@ function Fight() {
     }));
     // Victoire ?
     if (fighter.pv <= deg) {
-      navigate(`/adversaire/${fighter.id}/victoire`);
+      if (fighter.id === 4 || fighter.id === 5) {
+        navigate(`/end/${fighter.id}`);
+      } else navigate(`/adversaire/${fighter.id}/victoire`);
     }
   };
 
