@@ -36,8 +36,9 @@ function SelectFight() {
         {showMessage && (
           <div className="box box-position-story2">
             <p className="text-style box-story1">
-              ici vous retrouvez plusieurs personnages à combattre, cliquez sur
-              l'un d'eux pour l'affronter.
+              a gauche le vaiseau vous permez de revenir en arrière. <br /> ici
+              vous retrouvez plusieurs personnages à combattre, cliquez sur l'un
+              d'eux pour l'affronter.
             </p>
             <div className="box-story2">
               <button
