@@ -8,7 +8,7 @@ import "./Fight.css";
 function Fight() {
   const [character] = useLoaderData();
   const [fighter, setFighter] = useState(character);
-  const { player, setPlayerstat, setNbVictory } = useHackaton();
+  const { player } = useHackaton();
   const navigate = useNavigate();
 
   const calculDeg = (attacker, defender) => {
@@ -27,8 +27,7 @@ function Fight() {
     player.pv -= deg;
     // Defaite ?
     if (player.pv <= 0) {
-      setPlayerstat("pv", 100);
-      navigate(`/planetes/${fighter.planet_id}`);
+      navigate(`/adversaire/${fighter.id}/defaite`);
       return;
     }
     // Joueur·euse contre attaque
@@ -39,11 +38,7 @@ function Fight() {
     }));
     // Victoire ?
     if (fighter.pv <= deg) {
-      setNbVictory((victories) => [...victories, fighter.id]);
-      setPlayerstat("pv", 100);
-      setPlayerstat("atk", player.atk + 2);
-      setPlayerstat("def", player.def + 3);
-      navigate(`/planetes/${fighter.planet_id}`);
+      navigate(`/adversaire/${fighter.id}/victoire`);
     }
   };
 
