@@ -8,10 +8,10 @@ function EndFight() {
   const [character] = useLoaderData();
   const { id, status } = useParams();
   const { player, setNbVictory, setPlayerstat } = useHackaton();
-
+  const modifiedID = parseInt(id, 10);
   const handleVictories = (att) => {
     setPlayerstat("pv", 100);
-    setNbVictory((victories) => [...victories, id]);
+    setNbVictory((victories) => [...victories, modifiedID]);
     if (att === "atk") {
       setPlayerstat("atk", player.atk + 5);
     } else {
