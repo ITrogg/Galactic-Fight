@@ -58,7 +58,13 @@ function PlayerForm() {
   };
 
   return (
-    <section className="background-page display-intro">
+    <section
+      className={
+        currentMessageIndex >= 0
+          ? "background-page display-intro"
+          : "background-page display-form"
+      }
+    >
       {currentMessageIndex >= 0 ? (
         <div className="box box-position-story">
           <div className="text-style box-story1">
@@ -76,52 +82,49 @@ function PlayerForm() {
           </div>
         </div>
       ) : (
-        <div className="box-center-story">
-          <div className="form-container">
-            <form onSubmit={handleSubmit}>
-              {" "}
-              {/* Added onSubmit handler */}
-              <label htmlFor="avatar" className="avatar-label">
-                <h2 className="title-style title-player">
-                  Choisissez un avatar
-                </h2>
-              </label>
-              <div className="avatar-selection">
-                {avatars.map((avatar) => (
-                  <button
-                    key={avatar.id}
-                    type="button"
-                    className={`button-player-avatar ${selectAvatar === avatar.src ? "selected" : ""}`}
-                    onClick={() => setPlayerstat("image", avatar.src)}
-                  >
-                    <img src={avatar.src} alt={avatar.alt} />
-                  </button>
-                ))}
-              </div>
-              <label htmlFor="name" className="name-label">
-                Quel est votre nom ?
-                <input
-                  type="text"
-                  required
-                  value={player.name}
-                  onChange={(e) => setPlayerstat("name", e.target.value)}
-                  className="input-form"
-                />
-              </label>
-              <button
-                type="submit"
-                className="button-style button-form"
-                disabled={player.name === "" || selectAvatar === ""}
-              >
-                valider
-              </button>
-            </form>
+        <div className="page-container">
+          <form onSubmit={handleSubmit} className="form-container">
+            {/* Added onSubmit handler */}
+            <label htmlFor="avatar" className="avatar-label">
+              <h2 className="title-style title-player box">
+                Choisissez un avatar
+              </h2>
+            </label>
+            <div className="avatar-selection">
+              {avatars.map((avatar) => (
+                <button
+                  key={avatar.id}
+                  type="button"
+                  className="selected-avatar"
+                  onClick={() => setPlayerstat("image", avatar.src)}
+                >
+                  <img src={avatar.src} alt={avatar.alt} />
+                </button>
+              ))}
+            </div>
+            <label htmlFor="name" className="name-label box">
+              Quel est votre nom ?
+              <input
+                type="text"
+                required
+                value={player.name}
+                onChange={(e) => setPlayerstat("name", e.target.value)}
+                className="input-form"
+              />
+            </label>
+            <button
+              type="submit"
+              className="button-style button-form"
+              disabled={player.name === "" || selectAvatar === ""}
+            >
+              valider
+            </button>
             {successForm && (
               <Link to="/planetes" className="button-style">
                 Let's go
               </Link>
             )}
-          </div>
+          </form>
         </div>
       )}
     </section>

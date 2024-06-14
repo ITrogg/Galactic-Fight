@@ -6,11 +6,16 @@
 }
 
 .form-container {
+  padding: 2rem;
   margin: auto;
-  width: 45%;
-  background-color: aliceblue;
-  border-radius: 5%;
-
+  width: 70%;
+  text-align: center;
+  gap: 2rem;
+  .title-player {
+    width: 100%;
+    color: var(--color-text);
+    margin: auto;
+  }
   form {
     padding: 1rem;
     display: flex;
@@ -21,20 +26,36 @@
     align-self: flex-start;
     margin-left: 4rem;
   }
+  .avatar-selection {
+    .selected-avatar {
+      background: transparent;
+      border: none;
+    }
+    .selected-avatar:hover {
+      cursor: pointer;
+      border-radius: 50%;
+      border: solid 4px var(--color-button);
+    }
+    .selected-avatar:focus {
+      border: solid 4px var(--color-button);
+      border-radius: 50%;
+    }
+  }
   .name-label {
+    font-size: 1.5rem;
+    color: var(--color-text);
     align-self: flex-start;
     margin-left: 4rem;
   }
   .input-form {
+    height: 2rem;
     margin-left: 1rem;
   }
   .button-form {
     align-self: flex-end;
     margin: 1rem;
   }
-  .title-player {
-    color: black;
-  }
+
   .text-player-page {
     color: black;
   }

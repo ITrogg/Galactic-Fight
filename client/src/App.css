@@ -79,6 +79,7 @@
   border-radius: 2rem;
   box-shadow: 0 0 0 1em transparent;
   padding: 0.5rem 2rem;
+  text-decoration: none;
 }
 
 .button-style:hover {
