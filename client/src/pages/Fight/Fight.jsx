@@ -10,16 +10,20 @@ function Fight() {
   const [fighter, setFighter] = useState(character);
   const { player, setPlayerstat, setNbVictory } = useHackaton();
   const navigate = useNavigate();
-  const lauchAttack = () => {
-    let deg = 0;
-    // PNJ attaque
-    if (fighter.atk > player.def) {
-      deg = fighter.atk * 4;
-    } else if (fighter.atk < player.def) {
-      deg = fighter.atk;
-    } else {
-      deg = fighter.atk * 2;
+
+  const calculDeg = (attacker, defender) => {
+    if (attacker.atk > defender.def) {
+      return attacker.atk * 3;
     }
+    if (attacker.atk < defender.def) {
+      return attacker.atk;
+    }
+    return attacker.atk * 2;
+  };
+
+  const lauchAttack = () => {
+    // PNJ attaque
+    let deg = calculDeg(fighter, player);
     player.pv -= deg;
     // Defaite ?
     if (player.pv <= 0) {
@@ -27,14 +31,8 @@ function Fight() {
       navigate(`/planetes/${fighter.planet_id}`);
       return;
     }
-    // Joueur contre attaque
-    if (player.atk > fighter.def) {
-      deg = player.atk * 3;
-    } else if (player.atk < fighter.def) {
-      deg = player.atk;
-    } else {
-      deg = player.atk * 2;
-    }
+    // Joueur·euse contre attaque
+    deg = calculDeg(player, fighter);
     setFighter((prev) => ({
       ...prev,
       pv: prev.pv - deg,
