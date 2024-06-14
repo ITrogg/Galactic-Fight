@@ -4,6 +4,7 @@ import CardCharacter from "../../components/CardCharacter/CardCharacter";
 import { useHackaton } from "../../contexts/hackathonContext";
 
 import "./Fight.css";
+import "../../App.css";
 
 function Fight() {
   const [character] = useLoaderData();
@@ -52,7 +53,11 @@ function Fight() {
         <CardCharacter classCard="card-battle-character" character={fighter} />
         <CardCharacter classCard="card-battle-character" character={player} />
       </div>
-      <button type="button" onClick={() => lauchAttack()}>
+      <button
+        type="button"
+        className="button-style button-fight"
+        onClick={() => lauchAttack()}
+      >
         Attaquer
       </button>
     </main>
